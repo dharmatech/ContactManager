@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authorization;
+using ContactManager.Authorization;
 
 namespace ContactManager
 {
@@ -44,6 +45,11 @@ namespace ContactManager
                     .RequireAuthenticatedUser()
                     .Build();
             });
+
+            services.AddScoped<IAuthorizationHandler, ContactIsOwnerAuthorizationHandler>();
+
+            services.AddSingleton<IAuthorizationHandler, ContactAdministratorsAuthorizationHandler>();
+            services.AddSingleton<IAuthorizationHandler, ContactManagerAuthorizationHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +82,8 @@ namespace ContactManager
         }
     }
 }
+
+
 
 
 
