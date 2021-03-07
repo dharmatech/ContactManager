@@ -92,7 +92,9 @@ namespace ContactManager.Data
                     City = "Redmond",
                     State = "WA",
                     Zip = "10999",
-                    Email = "debra@example.com"
+                    Email = "debra@example.com",
+                    Status = ContactStatus.Approved,
+                    OwnerID = adminID
                 },
                 new Contact
                 {
@@ -101,40 +103,49 @@ namespace ContactManager.Data
                     City = "Redmond",
                     State = "WA",
                     Zip = "10999",
-                    Email = "thorsten@example.com"
+                    Email = "thorsten@example.com",
+                    Status = ContactStatus.Approved,
+                    OwnerID = adminID
                 },
-             new Contact
-             {
-                 Name = "Yuhong Li",
-                 Address = "9012 State st",
-                 City = "Redmond",
-                 State = "WA",
-                 Zip = "10999",
-                 Email = "yuhong@example.com"
-             },
-             new Contact
-             {
-                 Name = "Jon Orton",
-                 Address = "3456 Maple St",
-                 City = "Redmond",
-                 State = "WA",
-                 Zip = "10999",
-                 Email = "jon@example.com"
-             },
-             new Contact
-             {
-                 Name = "Diliana Alexieva-Bosseva",
-                 Address = "7890 2nd Ave E",
-                 City = "Redmond",
-                 State = "WA",
-                 Zip = "10999",
-                 Email = "diliana@example.com"
-             }
+                new Contact
+                {
+                    Name = "Yuhong Li",
+                    Address = "9012 State st",
+                    City = "Redmond",
+                    State = "WA",
+                    Zip = "10999",
+                    Email = "yuhong@example.com",
+                    Status = ContactStatus.Approved,
+                    OwnerID = adminID
+                },
+                new Contact
+                {
+                    Name = "Jon Orton",
+                    Address = "3456 Maple St",
+                    City = "Redmond",
+                    State = "WA",
+                    Zip = "10999",
+                    Email = "jon@example.com",
+                    Status = ContactStatus.Submitted,
+                    OwnerID = adminID
+                },
+                new Contact
+                {
+                    Name = "Diliana Alexieva-Bosseva",
+                    Address = "7890 2nd Ave E",
+                    City = "Redmond",
+                    State = "WA",
+                    Zip = "10999",
+                    Email = "diliana@example.com",
+                    Status = ContactStatus.Rejected,
+                    OwnerID = adminID
+                }
              );
             context.SaveChanges();
         }
 
     }
 }
+
 
 
